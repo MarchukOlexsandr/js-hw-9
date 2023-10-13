@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сторінка з посиланнями на Домашні Завдання</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #8e2ebf, #4d4add);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: Arial, sans-serif;
+        perspective: 100px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        margin: 20px 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        border: 2px solid white;
+        padding: 10px;
+        display: inline-block;
+        transition: border-color 0.3s, background-color 0.3s;
+        transform-style: preserve-3d;
+      }
+
+      a:hover {
+        border-color: #4d4add;
+        background-color: #4d4add;
+        animation: bounce 0.5s ease infinite alternate;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Папки з Домашніми</h1>
+    <ul>
+      <li><a href="./Task1/index.html">Завдання 1</a></li>
+      <li><a href="./Task2/index.html">Завдання 2</a></li>
+      <li><a href="./Task3/index.html">Завдання 3</a></li>
+      <li><a href="./Task4/index.html">Завдання 4</a></li>
+      <li><a href="./Task5/index.html">Завдання 5</a></li>
+      <li><a href="./Task6/index.html">Завдання 6</a></li>
+    </ul>
+  </body>
+</html>

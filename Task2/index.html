@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест</title>
+    <style>
+      body {
+        background-color: beige;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .question {
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        width: 50%;
+        text-align: center;
+      }
+
+      .question:last-child {
+        margin-bottom: 0;
+      }
+
+      button {
+        background-color: #4d4add;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        width: 50%;
+      }
+
+      #back-button {
+        background-color: #f37335;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Тест</h1>
+    <div class="question">
+      <p>Питання 1: Яка столиця Франції?</p>
+      <label> <input type="radio" name="q1" value="paris" /> Париж </label>
+      <label> <input type="radio" name="q1" value="london" /> Лондон </label>
+    </div>
+
+    <div class="question">
+      <p>Питання 2: Скільки днів у тижні?</p>
+      <label> <input type="radio" name="q2" value="6" /> 6 </label>
+      <label> <input type="radio" name="q2" value="7" /> 7 </label>
+    </div>
+
+    <div class="question">
+      <p>Питання 3: 2 + 2 = ?</p>
+      <label> <input type="radio" name="q3" value="3" /> 3 </label>
+      <label> <input type="radio" name="q3" value="4" /> 4 </label>
+    </div>
+
+    <button id="submit-button">Перевірити відповіді</button>
+    <div id="result" style="display: none"></div>
+    <button id="back-button" style="display: none" onclick="goBack()">
+      На головну
+    </button>
+
+    <script>
+      const quizForm = document.querySelectorAll(".question");
+      const submitButton = document.getElementById("submit-button");
+      const backButton = document.getElementById("back-button");
+      const resultText = document.getElementById("result");
+
+      function goBack() {
+        window.history.back();
+      }
+
+      submitButton.addEventListener("click", function () {
+        const correctAnswers = [...quizForm].reduce(
+          (total, question, index) => {
+            const selectedAnswer = question.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (selectedAnswer && selectedAnswer.value === "paris") {
+              return total + 1;
+            }
+            return total;
+          },
+          0
+        );
+
+        resultText.textContent = `Результат: ${correctAnswers} правильних відповідей з 3 питань.`;
+        resultText.style.display = "block";
+        submitButton.style.display = "none";
+        backButton.style.display = "block";
+      });
+    </script>
+  </body>
+</html>

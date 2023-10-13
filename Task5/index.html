@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Відмітка присутності на парі</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Відмітка присутності на парі</h1>
+      <form id="attendance-form">
+        <label for="group">Група:</label>
+        <select id="group" name="group">
+          <option value="Група 1">Група 1</option>
+          <option value="Група 2">Група 2</option>
+          <!-- Додайте інші групи за необхідністю -->
+        </select>
+
+        <label for="pair">Пара:</label>
+        <select id="pair" name="pair">
+          <option value="Пара 1">Пара 1</option>
+          <option value="Пара 2">Пара 2</option>
+          <!-- Додайте інші пари за необхідністю -->
+        </select>
+
+        <label for="topic">Тема заняття:</label>
+        <input type="text" id="topic" name="topic" required />
+
+        <fieldset>
+          <legend>Присутні студенти:</legend>
+          <div class="student-label">
+            <input
+              type="checkbox"
+              class="student-checkbox"
+              id="student1"
+              name="student1"
+            />
+            <label for="student1">Студент 1</label>
+          </div>
+          <div class="student-label">
+            <input
+              type="checkbox"
+              class="student-checkbox"
+              id="student2"
+              name="student2"
+            />
+            <label for="student2">Студент 2</label>
+          </div>
+          <!-- Додайте інших студентів за необхідністю -->
+        </fieldset>
+
+        <button type="submit">Відмітити присутніх</button>
+      </form>
+
+      <div id="attendance-list"></div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

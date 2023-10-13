@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Бронювання квитків на поїзд</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Бронювання квитків на поїзд</h1>
+
+      <label for="direction">Напрямок поїзда:</label>
+      <select id="direction">
+        <option value="Київ - Львів">Київ - Львів</option>
+        <option value="Львів - Київ">Львів - Київ</option>
+        <!-- Додайте інші напрямки поїзда сюди -->
+      </select>
+
+      <label for="date">Дата поїздки:</label>
+      <input type="date" id="date" />
+
+      <h2>Оберіть місця для бронювання:</h2>
+      <div class="container">
+        <!-- Генеруємо 28 флажків для місць -->
+        <!-- Ціну квитка можна зберігати в масиві і виводити біля кнопки -->
+        <!-- Заповніть значення флажків відповідно до потреби -->
+        <div style="display: inline-block; margin: 2px">
+          <label class="ticket">
+            <input type="checkbox" name="ticket" value="1A" data-price="50" />
+            1A
+          </label>
+          <label class="ticket">
+            <input type="checkbox" name="ticket" value="2A" data-price="50" />
+            2A
+          </label>
+          <!-- Додайте інші місця сюди -->
+        </div>
+
+        <div style="display: inline-block; margin: 2px">
+          <label class="ticket">
+            <input type="checkbox" name="ticket" value="1B" data-price="60" />
+            1B
+          </label>
+          <label class="ticket">
+            <input type="checkbox" name="ticket" value="2B" data-price="60" />
+            2B
+          </label>
+          <!-- Додайте інші місця сюди -->
+        </div>
+      </div>
+
+      <button type="button" id="confirmButton">Підтвердити поїздку</button>
+      <div id="totalPrice">Ціна за квиток: 0 грн</div>
+    </div>
+
+    <h2>Заброньовані квитки:</h2>
+    <ul id="reservedTickets">
+      <!-- Тут буде відображатися список заброньованих квитків -->
+    </ul>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
